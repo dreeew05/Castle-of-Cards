@@ -3,12 +3,12 @@
 
  Date Created 2021
 
- Members:
+ Members:</br>
  Bulaong</br>
- Porras
- Molejona
- Manejo
- Avillanosa
+ Porras</br>
+ Molejona</br>
+ Manejo</br>
+ Avillanosa</br>
 
 # How to run
  run gui.py
