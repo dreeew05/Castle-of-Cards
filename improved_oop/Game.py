@@ -1,15 +1,13 @@
 import tkinter as tk
-from tkinter import ttk
+import ScreenProperties as sp
 import MainMenu as mm
 import CharacterSelection as cs
 
 
-class Game(tk.Tk):
+class Game(tk.Tk, sp.ScreenProperties):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.GAME_NAME = "Castle of Cards"
-        self._SCREEN_WIDTH = 1280
-        self._SCREEN_HEIGHT = 720
 
         self.container = tk.Frame(self)
         self.container.pack(fill="both", expand=True)
@@ -38,9 +36,11 @@ class Game(tk.Tk):
         self.container.grid_rowconfigure(0, weight=1)
         self.container.grid_columnconfigure(0, weight=1)
         # Position the window in the center of the screen
-        posX = (self.winfo_screenwidth() // 2) - (self._SCREEN_WIDTH // 2)
-        posY = (self.winfo_screenheight() // 2) - (self._SCREEN_HEIGHT // 2)
-        self.geometry(f"{self._SCREEN_WIDTH}x{self._SCREEN_HEIGHT}+{posX}+{posY}")
+        posX = (self.winfo_screenwidth() // 2) - (super().getScreenWidth() // 2)
+        posY = (self.winfo_screenheight() // 2) - (super().getScreenHeight() // 2)
+        self.geometry(
+            f"{super().getScreenWidth()}x{super().getScreenHeight()}+{posX}+{posY}"
+        )
 
 
 if __name__ == "__main__":
